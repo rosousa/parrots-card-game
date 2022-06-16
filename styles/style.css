@@ -9,7 +9,7 @@ body {
 }
 
 main {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     margin-top: 40px;
@@ -66,7 +66,10 @@ main > h1 {
     transform: rotateY(180deg);
 }
 
-@media (max-width: 400px){
+@media (max-width: 600px){
+    main {
+        width: 80%;
+    }
     main > h1 {
         font-size: 2rem;
     }
