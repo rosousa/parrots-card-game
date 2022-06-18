@@ -66,11 +66,32 @@ main > h1 {
     transform: rotateY(180deg);
 }
 
+.counter {
+    position: fixed;
+    width: 80px;
+    height: 40px;
+    color: rgba(117, 183, 158, 1);
+    background-color: rgba(167, 233, 175, 1);
+    right: 0vw;
+    top: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.625rem;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
 @media (max-width: 600px){
     main {
         width: 80%;
     }
     main > h1 {
         font-size: 2rem;
+    }
+    .counter {
+        width: 60px;
+        height: 30px;
+        font-size: 1rem;
     }
 }
