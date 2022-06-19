@@ -16,6 +16,7 @@ let seconds = 0;
 
 function start(){
     const cardsBoard = [];
+    moves = 0;
     memory_game.innerHTML = '';
     while(true){
         numberCards = prompt('Digite o número de cartas');
@@ -109,22 +110,24 @@ function countMoves(){
 function checkForRestart(){
     numberMatchs--;
     if(numberMatchs === 0){
-        if(minutes > 0){
-            alert(`Você ganhou em ${2 * moves} jogadas! E em ${minutes} minutos e ${seconds} segundos!`);
-        } else {
-            alert(`Você ganhou em ${2 * moves} jogadas! E em ${seconds} segundos!`);
-        }
-        restart = prompt('Gostaria de reiniciar o jogo?').toLowerCase();
-        minutes = 0;
-        seconds = 0;
-        if(restart === 'sim'){
-            setTimeout(start, 1000);
-        } else if(restart === 'não') {
-            alert('Vai jogar mesmo assim 🤗');
-            setTimeout(start, 1000);
-        } else {
-            alert('🥺');
-        }
+        setTimeout(() => {
+            if(minutes > 0){
+                alert(`Você ganhou em ${2 * moves} jogadas! E em ${minutes} minutos e ${seconds} segundos!`);
+            } else {
+                alert(`Você ganhou em ${2 * moves} jogadas! E em ${seconds} segundos!`);
+            }
+            restart = prompt('Gostaria de reiniciar o jogo?').toLowerCase();
+            minutes = 0;
+            seconds = 0;
+            if(restart === 'sim'){
+                setTimeout(start, 1000);
+            } else if(restart === 'não') {
+                alert('Vai jogar mesmo assim 🤗');
+                setTimeout(start, 1000);
+            } else {
+                alert('🥺');
+            }
+        }, 1000);
         clearInterval(timerReset);
     }
 }
